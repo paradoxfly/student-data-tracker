@@ -18,9 +18,9 @@ student2.addProperty("Department", "Computer Engineering");
 student2.addProperty("Level", "100");
 student2.addProperty("Matric Number", "U/2023/123456");
 
-const columns = ["name", "English", "Maths", "Physics", "Chemistry", "Biology", "State Of Origin", "Department", "Level", "Matric Number"]
+const columns = ["name", "State Of Origin", "Department", "Level", "Matric Number"]
 
 table.setColumns(columns);
-table.addData(student.getStudentData());
-table.addData(student2.getStudentData());
+table.addRow(student.getStudentData());
+table.addRow(student2.getStudentData());
 table.drawTable();

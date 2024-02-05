@@ -2,7 +2,7 @@ export class Table {
   constructor() {
     this.app = document.getElementById("app");
     this.columns = [];
-    this.data = [];
+    this.rows = [];
   }
 
   /**
@@ -17,8 +17,8 @@ export class Table {
    * 
    * @param {*} data |  Array of objects. Each object should have keys that match the columns
    */
-  setData(data) {
-    this.data = data;
+  setRows(data) {
+    this.rows = data;
   }
 
   /**
@@ -33,8 +33,8 @@ export class Table {
    * 
    * @param {*} data add a row to the table by providing the data object. The object should have keys that match the columns
    */
-  addData(data) {
-    this.data.push(data);
+  addRow(data) {
+    this.rows.push(data);
   }
 
   /**
@@ -57,7 +57,7 @@ export class Table {
     thead.appendChild(tr);
     table.appendChild(thead);
 
-    for (let item of this.data) {
+    for (let item of this.rows) {
       const tr2 = document.createElement('tr');
       for (let column of this.columns) {
         const td = document.createElement('td');
