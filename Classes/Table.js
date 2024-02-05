@@ -1,3 +1,13 @@
+// Description: This file contains the Table class which is responsible for creating a table and drawing it in the app element.
+// The Table class has a columns property which is an array of strings. Each string represents a column name.
+// The Table class also has a rows property which is an array of objects. Each object should have keys that match the columns.
+/*
+  An example is columns = ['name', 'age']
+  rows = [
+    { name: 'John', age: 20 },
+    { name: 'Anabelle', age: 19 }
+  ]
+*/
 export class Table {
   constructor() {
     this.app = document.getElementById("app");
