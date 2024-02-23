@@ -6,24 +6,19 @@ export class Student {
   constructor(name) {
     this.name = name;
 
-    this.properties = [];
+    this.properties = {
+      name: this.name
+    };
 
     // Property { label, value }[]
   }
 
   addProperty(label, value) {
-    this.properties.push({ label, value });
+    this.properties[label]= value;
   }
 
   getStudentData() {
-    const data = { 
-      name: this.name, 
-      age: this.age,
-    };
-    
-    for (let x of this.properties) {
-      data[x.label] = x.value;
-    }
+    const data = this.properties;
 
     return data;
   }
