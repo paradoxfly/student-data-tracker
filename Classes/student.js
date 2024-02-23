@@ -3,26 +3,27 @@
 // The student can add properties and get the student data as an object
 // The student can also get the properties of the student
 export class Student {
-  constructor(name) {
+  constructor(name, ) {
     this.name = name;
+    // this.age = age;
+    this.properties = {};
 
-    this.properties = [];
-
-    // Property { label, value }[]
+    
   }
 
   addProperty(label, value) {
-    this.properties.push({ label, value });
+    this.properties[label] = value;
   }
 
   getStudentData() {
     const data = { 
       name: this.name, 
-      age: this.age,
+      // age: this.age,
     };
     
-    for (let x of this.properties) {
-      data[x.label] = x.value;
+    for (let x in this.properties) {
+      data[x] = this.properties[x];
+      // data[x.label] = x.value;
     }
 
     return data;
@@ -32,3 +33,35 @@ export class Student {
     console.log(this.properties);
   }
 }
+
+
+// export class Student {
+//   constructor(name) {
+//     this.name = name;
+
+//     this.properties = [];
+
+//     // Property { label, value }[]
+//   }
+
+//   addProperty(label, value) {
+//     this.properties.push({ label, value });
+//   }
+
+//   getStudentData() {
+//     const data = { 
+//       name: this.name, 
+//       age: this.age,
+//     };
+    
+//     for (let x of this.properties) {
+//       data[x.label] = x.value;
+//     }
+
+//     return data;
+//   }
+
+//   getProperties() {
+//     console.log(this.properties);
+//   }
+// }
