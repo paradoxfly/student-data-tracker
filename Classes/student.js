@@ -15,7 +15,7 @@ export class Student {
     this.properties.push({ label, value });
   }
 
-  getStudentData() {
+  getStudentDataForTable() {
     const data = { 
       name: this.name, 
       age: this.age,
