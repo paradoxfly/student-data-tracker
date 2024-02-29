@@ -5,30 +5,51 @@
 export class Student {
   constructor(name) {
     this.name = name;
+    
+    this.properties = {};
 
-    this.properties = [];
+    //this.properties = label, value;
 
     // Property { label, value }[]
   }
 
-  addProperty(label, value) {
-    this.properties.push({ label, value });
+  addProperty(data) {
+    // const {age, state, height, weight, complexion,} = data;
+    // this.properties = {
+    //   age: age,
+    //   state: state,
+    //   height: height,
+    //   weight: weight,
+    //   complexion: complexion,
+    // }
+
+    this.properties = data
   }
 
-  getStudentDataForTable() {
+
+ /**getStudentData() {
     const data = { 
       name: this.name, 
       age: this.age,
     };
     
     for (let x of this.properties) {
-      data[x.label] = x.value;
+      data (x.label) = x.value;
     }
 
     return data;
-  }
+  }*/
 
   getProperties() {
-    console.log(this.properties);
-  }
+    const detail = {
+      name: this.name,
+      age: this.properties.age,
+      state: this.properties.state,
+      height: this.properties.height,
+      weight: this.properties.weight,
+      complexion: this.properties.complexion,
+    }
+    return detail;
+  } 
+  
 }
