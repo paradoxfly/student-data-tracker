@@ -1,5 +1,7 @@
 import { Table } from "./Classes/Table.js";
 import { Student } from "./Classes/student.js";
+import { Admin } from "./Classes/student.js";
+
 
 // Create a table instance
 const table = new Table();
@@ -30,6 +32,13 @@ student3.addProperty("Department", "Chemical Engineering");
 student3.addProperty("Level", "900");
 student3.addProperty("Matric Number", "U/2023/547900");
 
+let admin = new Admin('Bubu');
+
+admin.addProperty("State Of Origin", "Aba");
+admin.addProperty("Department", "Geology");
+admin.addProperty("Level", "300");
+admin.addProperty("Matric Number", "U/2023/623576");
+
 
 // Set the columns of the table you want to create
 const columns = ["name", "State Of Origin", "Department", "Level", "Matric Number"]
@@ -46,6 +55,13 @@ table.addRow(student2.getStudentData());
 // Add the Fat Pharoah data to the table as a row.
 table.addRow(student3.getStudentData());
 
+table.addRow(admin.getStudentData());
+
 
 // Draw the table in the HTML app element
 table.drawTable();
+
+const users = [student, student2, student3, admin];
+const updatedUsers = admin.deleteUser(users, student3);
+
+console.log(updatedUsers)

@@ -34,6 +34,14 @@ export class Student {
   }
 }
 
+// Admin to delete a student data
+// Admin class to delete a student data
+export class Admin extends Student {
+  deleteUser(users, user) {
+    return users.filter(student => student.name !== user.name);
+  }
+}
+
 
 // export class Student {
 //   constructor(name) {
